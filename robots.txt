@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mynro.odoo.com/sitemap.xml
