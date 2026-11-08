@@ -5,3 +5,10 @@
 @media(max-width:370px){:root{--gutter:19px}.hero-title{font-size:14vw}.hero-actions{gap:12px}.service-row{grid-template-columns:20px 42px 1fr 28px;gap:8px}.service-symbol{width:40px;height:40px}.service-main h3{font-size:12px}.service-main p{font-size:8px}.section-heading h2{font-size:47px}.empty-foot{font-size:5px}.contact-links{gap:11px}.contact-links a{font-size:7px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 .service-detail{margin-top:8px}.service-detail summary{display:inline-flex;align-items:center;gap:8px;list-style:none;cursor:pointer;color:#ddd;font-size:8px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid #555;padding-bottom:4px}.service-detail summary::-webkit-details-marker{display:none}.service-detail summary:after{content:'+';color:var(--red);font-size:13px}.service-detail[open] summary:after{content:'−'}.service-detail p{padding-top:8px!important;color:#aaa!important}
+/* MYNRO Desktop Layout Fix */
+@media (min-width: 1001px) {
+  .hero-title {
+    font-size: clamp(64px, 7.5vw, 120px);
+    line-height: 0.98;
+  }
+}
