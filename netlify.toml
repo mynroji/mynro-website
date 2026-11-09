@@ -1,0 +1,6 @@
+[build]
+  command = "node netlify/build.mjs"
+  publish = "public-build"
+
+[functions]
+  included_files = ["netlify/functions/studio-assets/**"]
