@@ -47,7 +47,8 @@ export default async function studio(req) {
   if (!key || !/^[A-Za-z0-9_-]{32,128}$/.test(key)) return response('Not found',404);
 
   if (req.method === 'POST') {
-    if (req.headers.get('origin') !== origin) return response('Forbidden',403);
+    const sameOrigin = req.headers.get('origin') === origin || req.headers.get('sec-fetch-site') === 'same-origin';
+    if (!sameOrigin) return response('Forbidden',403);
     if (pathname === '/studio/logout') return redirect('/studio','',0);
     if (pathname !== '/studio/login') return response('Not found',404);
     if (!req.headers.get('content-type')?.startsWith('application/x-www-form-urlencoded')) return response('Invalid sign-in request',400);
@@ -60,6 +61,7 @@ export default async function studio(req) {
   }
 
   if (req.method !== 'GET' && req.method !== 'HEAD') return response('Method not allowed',405);
+  if (pathname === '/studio/login') return response(null,303,'text/plain',{Location:'/studio'});
   if (!Object.hasOwn(assets,pathname)) return response('Not found',404);
   const [file,type] = assets[pathname];
   if (!validSession(req.headers.get('cookie'),key)) {
