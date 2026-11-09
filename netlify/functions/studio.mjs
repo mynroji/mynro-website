@@ -7,7 +7,7 @@ const baseHeaders = {
   'Cache-Control': 'private, no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
   'X-Content-Type-Options': 'nosniff',
-  'Referrer-Policy': 'no-referrer',
+  'Referrer-Policy': 'same-origin',
   'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"
 };
 const assets = {
